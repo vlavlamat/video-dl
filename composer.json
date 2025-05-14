@@ -1,0 +1,23 @@
+{
+  "name": "vmatkovskii/video-dl",
+  "description": "Simple terminal tool to download and re-encode videos using yt-dlp and ffmpeg",
+  "type": "project",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Vladimir Matkovskii",
+      "email": "vlavlamat@icloud.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "VMatkovskii\\VideoDl\\": "src/"
+    }
+  },
+  "bin": [
+    "bin/video-dl"
+  ],
+  "require": {
+    "php": ">=8.0"
+  }
+}
