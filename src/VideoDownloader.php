@@ -92,7 +92,7 @@ class VideoDownloader
 
     private function getWritableDownloadsDir(): string
     {
-        $targetDir = getenv("HOME") . "/Downloads/Videos";
+        $targetDir = '/app/Downloads';
         if (!is_dir($targetDir) && !mkdir($targetDir, 0777, true) && !is_dir($targetDir)) {
             $this->log("Ошибка: не удалось создать директорию: $targetDir", '31');
             exit(1);
