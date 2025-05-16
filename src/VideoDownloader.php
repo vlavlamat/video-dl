@@ -6,12 +6,14 @@ class VideoDownloader
 {
     public function run(array $argv): void
     {
+        var_dump($argv);
+
         $downloadsDir = $this->getWritableDownloadsDir();
 
         $url = $argv[1] ?? null;
 
         if (!$url) {
-            $url = $this->prompt();
+            $url = $this->prompt();  // Запрашивает URL повторно
         }
 
         if (empty($url)) {
