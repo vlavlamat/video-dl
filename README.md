@@ -50,6 +50,8 @@ CLI-обёртка будет доступна как:
 * [`yt-dlp`](https://github.com/yt-dlp/yt-dlp)
 * [`ffmpeg`](https://ffmpeg.org/)
 * `php >= 8.0`
+* `ext-fileinfo` (PHP-расширение для определения MIME-типов)
+
 
 ---
 

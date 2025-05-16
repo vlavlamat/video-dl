@@ -8,7 +8,12 @@ class VideoDownloader
     {
         $downloadsDir = $this->getWritableDownloadsDir();
 
-        $url = $this->prompt("Введите URL для скачивания: ");
+        $url = $argv[1] ?? null;
+
+        if (!$url) {
+            $url = $this->prompt();
+        }
+
         if (empty($url)) {
             $this->log("URL не может быть пустым. Выход.", '31');
             exit(1);
@@ -35,7 +40,7 @@ class VideoDownloader
             exit(0);
         }
 
-        $newFile = $this->getSafeNewFilename($downloadedFile, 'mp4');
+        $newFile = $this->getSafeNewFilename($downloadedFile);
         $this->log("Перекодируем видео в mp4 (H.264)...", '34');
         $this->runWithOutput("ffmpeg -i " . escapeshellarg($downloadedFile) . " -c:v libx264 -c:a aac -strict experimental " . escapeshellarg($newFile));
 
@@ -49,9 +54,9 @@ class VideoDownloader
         }
     }
 
-    private function prompt(string $text): string
+    private function prompt(): string
     {
-        echo $this->color($text, '36');
+        echo $this->color("Введите URL для скачивания: ", '36');
         return trim(fgets(STDIN));
     }
 
@@ -84,10 +89,10 @@ class VideoDownloader
         return [$videoCodec, $audioCodec];
     }
 
-    private function getSafeNewFilename(string $original, string $ext): string
+    private function getSafeNewFilename(string $original): string
     {
         $path = pathinfo($original);
-        return $path['dirname'] . '/' . $path['filename'] . '_converted.' . $ext;
+        return $path['dirname'] . '/' . $path['filename'] . '_converted.' . 'mp4';
     }
 
     private function getWritableDownloadsDir(): string
