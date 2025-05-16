@@ -6,7 +6,6 @@ class VideoDownloader
 {
     public function run(array $argv): void
     {
-        var_dump($argv);
 
         $downloadsDir = $this->getWritableDownloadsDir();
 
