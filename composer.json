@@ -1,7 +1,7 @@
 {
   "name": "vmatkovskii/video-dl",
   "description": "Simple terminal tool to download and re-encode videos using yt-dlp and ffmpeg",
-  "type": "project",
+  "type": "library",
   "license": "MIT",
   "authors": [
     {
@@ -20,5 +20,9 @@
   "require": {
     "php": ">=8.0",
     "ext-fileinfo": "*"
-  }
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true,
+  "homepage": "https://github.com/vmatkovskii/video-dl",
+  "keywords": ["cli", "video", "downloader", "yt-dlp", "ffmpeg", "composer package"]
 }
