@@ -1,9 +1,0 @@
-#!/usr/bin/env php
-<?php
-
-require __DIR__ . '/../vendor/autoload.php';
-
-use VMatkovskii\VideoDl\VideoDownloader;
-
-$downloader = new VideoDownloader();
-$downloader->run($argv);
