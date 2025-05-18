@@ -43,7 +43,7 @@ composer update
 
 * [`yt-dlp`](https://github.com/yt-dlp/yt-dlp)
 * [`ffmpeg`](https://ffmpeg.org/)
-* `php >= 8.0`
+* `php >= 8.1`
 * `ext-fileinfo` (PHP-расширение для определения MIME-типов)
 
 ---
